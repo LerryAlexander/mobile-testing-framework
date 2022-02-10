@@ -17,6 +17,13 @@ In order to be able of executing the project you have to install the following:
 
 And then you should add the environment variables `ANDROID_HOME`, `ANDROID_TOOLS`, `ANDROID_PLATFORM` and `JAVA_HOME` on your machine
 
+### Project Setup 
+1. Clone this repository `git clone https://github.com/LerryAlexander/jobget-testing-framework.git`
+2. Go to the root folder `cd jobget-testing-framework`.
+3. Download the apk from this [URL](https://drive.google.com/u/0/uc?id=19FRROUB1l1SB3XLknoU9FIVdpHkR2XL2&export=download) and move it to path `src/resources/apps/android/` inside the repo:
+    
+    `mv /path/to/downloads/app-preproduction-jobget-14-jan.apk src/resources/apps/android/`
+
 ## RUNNING TESTS ##
 For running tests you need to execute the `run-tests.sh` which receives two mandatory arguments:
 * 1st argument is the run mode (**runMode**). Possible values are: `local`, `docker` or `cloud`
