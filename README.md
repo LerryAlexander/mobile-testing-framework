@@ -7,10 +7,11 @@ This is a gradle project that uses Appium, Java, Junit and Cucumber to automate 
 In order to be able of executing the project you have to install the following:
  
 1) Java SDK 11  
-2) Appium 1.21.0 or higher
-3) Android Studio - for devices emulator
-4) Docker (optional)
-5) KVM - Virtualization option must be enabled in the BIOS
+2) Gradle 6.1 or higher
+3) Appium 1.21.0 or higher
+4) Android Studio - for devices emulator
+5) Docker (optional)
+6) KVM - Virtualization option must be enabled in the BIOS
 
 **Notes:** After installing Android Studio, launch the AVD Manager and install following device:
 * **Pixel 4 XL API 28** --> (API 28, Android 9.0)
