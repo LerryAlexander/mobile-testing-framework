@@ -41,12 +41,12 @@ For running tests on your local you need to start Appium Server on port 4723
 
 ### RUNNING TESTS ON DOCKER ###
 For running tests on docker you need to have previously installed docker on your Linux machine. 
-The option for running tests with docker is useful if you when you want to add your tests into a CI/CD pipeline. 
+The option for running tests with docker is useful if you want to add your tests into a CI/CD pipeline. 
 
     ./run-tests.sh docker regression
 
 ### RUNNING TESTS ON BROWSERSTACK ###
-For running tests on browserstack you need to create an account from the website https://www.browserstack.com/users/sign_in 
+For running tests on browserstack you need to create an account from this website https://www.browserstack.com/users/sign_in 
 . However, for demo porpoises the following account was created:
 * Username: `demo.falabella.123@gmail.com`
 * Pass: `demo123`
