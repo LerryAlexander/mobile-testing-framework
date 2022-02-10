@@ -26,6 +26,7 @@ And then you should add the environment variables `ANDROID_HOME`, `ANDROID_TOOLS
 3. Download the apk from this [URL](https://drive.google.com/u/0/uc?id=19FRROUB1l1SB3XLknoU9FIVdpHkR2XL2&export=download) and move it to path `src/resources/apps/android/` inside the repo:
     
     `mv /path/to/downloads/app-preproduction-jobget-14-jan.apk src/resources/apps/android/`
+* *Note: Complete this step only if you are running tests on local or with docker, for running tests on browserstack you won't need to download the apk since it is already uploaded in the cloud.*
 
 ## RUNNING TESTS ##
 For running tests you need to execute the `run-tests.sh` which receives two mandatory arguments:
