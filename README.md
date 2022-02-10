@@ -4,19 +4,21 @@ This is a gradle project that uses Appium, Java, Junit and Cucumber to automate 
 
 ## GETTING STARTED ##
 
-In order to be able of executing the project you have to install the following:
+Following instructions are meant to work on Linux OS or MacOS (for MacOS there is not support for running on docker with android emulator).
+
+In order to be able of executing the project you have to install the following tools:
  
 1) Java SDK 11  
-2) Gradle 6.1 or higher
-3) Appium 1.21.0 or higher
-4) Android Studio - for devices emulator
-5) Docker (optional)
-6) KVM - Virtualization option must be enabled in the BIOS
+3) Gradle 6.1 or higher
+4) Appium 1.21.0 or higher
+5) Android Studio - for devices emulator
+6) Docker (optional)
+7) KVM - Virtualization option must be enabled in the BIOS
 
 **Notes:** After installing Android Studio, launch the AVD Manager and install following device:
 * **Pixel 4 XL API 28** --> (API 28, Android 9.0)
 
-And then you should add the environment variables `ANDROID_HOME`, `ANDROID_TOOLS`, `ANDROID_PLATFORM` and `JAVA_HOME` on your machine
+And then you should add the environment variables `ANDROID_HOME`, `ANDROID_TOOLS`, `ANDROID_PLATFORM` and `JAVA_HOME` on your machine.
 
 ### Project Setup 
 1. Clone this repository `git clone https://github.com/LerryAlexander/jobget-testing-framework.git`
