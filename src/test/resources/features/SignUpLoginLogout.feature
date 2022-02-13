@@ -24,7 +24,6 @@ Feature: Sign Up, Logout and Login
     And The employer confirms he wants to logout
     Then The app should get the employer back to landing screen
 
-  @login
   Scenario: [Positive] Login as an Employer
     Given The landing screen is displayed
     And The user navigates to login screen as an employer

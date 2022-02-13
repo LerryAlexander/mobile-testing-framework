@@ -190,8 +190,8 @@ public class SignUpPageAndroid extends BasePage implements SignUpPage {
     }
 
     @Override
-    public void getPopUpText(){
-        PageObjectHelper.getElementText(driver, popUpTitle);
+    public String getPopUpText(){
+        return PageObjectHelper.getElementText(driver, popUpTitle).replace(" ","");
     }
 
     @Override

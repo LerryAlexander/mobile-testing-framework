@@ -1,7 +1,6 @@
 package utilities;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.Lorem;
 
 import java.util.Locale;
 
@@ -26,7 +25,7 @@ public class RandomData {
     }
 
     public String companyWebsite(){
-        return "https://www."+companyName()+".com";
+        return faker.internet().url();
     }
 
 }

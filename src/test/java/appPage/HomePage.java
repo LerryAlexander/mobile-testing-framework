@@ -7,4 +7,5 @@ public interface HomePage {
     void navigateToLogoutOption();
     void tapOnLogoutOption();
     void tapOnYesButton();
+    boolean isProfilePictureVisible();
 }

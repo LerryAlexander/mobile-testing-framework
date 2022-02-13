@@ -83,17 +83,11 @@ public class Hooks {
         }
     }
 
-    /**
-     * HOOKS Si necesitas agregar hooks para capturar eventos antes de un step o después de uno, debes usar:
-     * @BeforeStep public void beforeStep() { }
-     * @AfterStep public void afterStep() { }
-     */
-
     @Before
     public void beforeScenario(Scenario scenario) {
         logger.info("BEFORE Scenario: " + scenario.getName());
         this.scenario = scenario;
-        launchApp();
+        activateApp();
     }
 
     @After
@@ -111,8 +105,7 @@ public class Hooks {
     }
 
     /**
-     * Este metodo verifica si la app esta instalada en el device, en caso de que no,
-     * la instala y la abre, en caso contrario, simplemente la abre
+     * This method opens the app (and close active sessions)
      */
     public void launchApp() {
         driver = getDriver();
@@ -129,8 +122,24 @@ public class Hooks {
     }
 
     /**
-     * Este metodo verifica si la app esta instalada en el device,
-     * y en caso de que si, la desinstala
+     * This method opens the app (but don't close active session) from device
+     */
+    public void activateApp() {
+        driver = getDriver();
+        try {
+            if (!driver.isAppInstalled(Constant.APP_BUNDLE_ID)) {
+                driver.installApp(Constant.USER_DIR+"/src/test/resources/apps/android/" + Constant.ANDROID_APP_NAME);
+                logger.info("App is now installed on device");
+            }
+            driver.activateApp(Constant.APP_BUNDLE_ID);
+            logger.info("App is activated");
+        }catch (Exception e){
+            logger.error("Error on activating the app: "+e.getMessage());
+        }
+    }
+
+    /**
+     * This method uninstall de app from device
      */
     public void removeApp(){
         driver = getDriver();
@@ -140,13 +149,12 @@ public class Hooks {
                 logger.info("App is removed from device");
             }
         }catch (Exception e){
-            logger.error("Error on removeApp() method: "+e.getMessage());
+            logger.error("Error on removing the app: "+e.getMessage());
         }
     }
 
     /**
-     * Este metodo verifica si la app esta instalada en el device,
-     * y en caso de que si, la cierra
+     * This method closes the app from device
      */
     public void closeApp() {
         driver = getDriver();
@@ -156,7 +164,22 @@ public class Hooks {
                 logger.info("The App is closed");
             }
         }catch (Exception e){
-            logger.error("Error on removeApp() method: "+e.getMessage());
+            logger.error("Error on closing the app: "+e.getMessage());
+        }
+    }
+
+    /**
+     * This method terminates the app from device
+     */
+    public void terminateApp() {
+        driver = getDriver();
+        try{
+            if (driver.isAppInstalled(Constant.APP_BUNDLE_ID)) {
+                driver.terminateApp(Constant.APP_BUNDLE_ID);
+                logger.info("The App is terminated");
+            }
+        }catch (Exception e){
+            logger.error("Error on terminating app: "+e.getMessage());
         }
     }
 

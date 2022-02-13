@@ -33,7 +33,7 @@ public class SignUpLoginLogoutSteps extends BaseSteps{
     private String email = randomData.email();
     private String password = Constant.PASSWORD;
     private String companyName = randomData.companyName();
-    private String companyWebsite = randomData.companyWebsite().replace(" ","").replace(",","").replace("&","");
+    private String companyWebsite = randomData.companyWebsite();
     private String phoneCountryName = "India";
     private String phoneNumber = Constant.INDIA_PHONE_NUMBER;
     private String otpCode = Constant.DEFAULT_OTP;
@@ -96,7 +96,6 @@ public class SignUpLoginLogoutSteps extends BaseSteps{
         landingPage.tapOnSignUpButton();
         landingPage.tapOnHireCandidates();
         landingPage.tapOnSignUpButton();
-        //Assert.assertTrue("First name field should be visible", signUpPage.isFirstNameFieldVisible());
     }
 
     @When("The employer enters all his personal info")
@@ -131,7 +130,8 @@ public class SignUpLoginLogoutSteps extends BaseSteps{
     public void the_employer_completes_the_mobile_phone_verification() {
         signUpPage.typeOnEnter4DigitField(otpCode);
         signUpPage.tapOnFinishButton();
-        Assert.assertTrue("CONGRATULATIONS! text should be present", signUpPage.isCongratulationsTextPresent());
+        Assert.assertEquals("CONGRATULATIONS! text should be present",signUpPage.getPopUpText(),"CONGRATULATIONS!");
+        signUpPage.tapOnOkPopUpButton();
     }
 
     @Given("The employer is on My Job Posting screen")

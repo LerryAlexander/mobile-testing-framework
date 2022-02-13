@@ -35,6 +35,9 @@ public class HomePageAndroid extends BasePage implements HomePage {
     @AndroidFindBy(id = Constant.APP_ID + "/btn_no")
     private MobileElement noButton;
 
+    @AndroidFindBy(id = Constant.APP_ID + "/iv_profile_pic")
+    private MobileElement profilePicture;
+
     @Override
     public boolean isJobPostingFrameVisible(){
         return PageObjectHelper.isElementVisible(jobPostingFrame);
@@ -48,6 +51,7 @@ public class HomePageAndroid extends BasePage implements HomePage {
     @Override
     public void navigateToLogoutOption(){
         PageObjectHelper.tapOnElement(driver, profileOption);
+        PageObjectHelper.isElementVisible(profilePicture);
         PageObjectHelper.swipeScreen(driver, PageObjectHelper.Direction.DOWN);
         PageObjectHelper.tapOnElement(driver, settings);
     }
@@ -60,5 +64,10 @@ public class HomePageAndroid extends BasePage implements HomePage {
     @Override
     public void tapOnYesButton(){
         PageObjectHelper.tapOnElement(driver, yesButton);
+    }
+
+    @Override
+    public boolean isProfilePictureVisible(){
+        return PageObjectHelper.isElementVisible(profilePicture);
     }
 }

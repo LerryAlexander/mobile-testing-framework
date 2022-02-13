@@ -23,7 +23,7 @@ public interface SignUpPage {
     boolean isLabelMobilePhoneVerificationVisible();
     void typeOnEnter4DigitField(String otpCode);
     void tapOnFinishButton();
-    void getPopUpText();
+    String getPopUpText();
     boolean isCongratulationsTextPresent();
     void tapOnOkPopUpButton();
 
