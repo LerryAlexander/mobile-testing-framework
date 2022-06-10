@@ -1,4 +1,4 @@
-# JOBGET MOBILE TESTING FRAMEWORK #
+# MOBILE TESTING FRAMEWORK #
 
 This is a gradle project that uses Appium, Java, Junit and Cucumber to automate tests flows on Android apps and contains the base code classes for running on iOS devices.
 
